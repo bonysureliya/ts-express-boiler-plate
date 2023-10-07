@@ -5,7 +5,9 @@ import homeAnimation from "./assets/Animated-smartphones_-rotation-[remix].gif";
 import HeroCard from "./components/Cards/HeroCard";
 import iphone1 from "./assets/apple phone1.gif";
 import iphone2 from "./assets/apple phone2.gif";
-
+import { Table } from "antd";
+import logo from './assets/AnilLogo.png';
+import onlyLogo from './assets/onlylogoanil.png';
 function App() {
   const icon = {
     hidden: {
@@ -18,8 +20,122 @@ function App() {
     },
   };
 
+  const dataSource = [
+    {
+      key: '1',
+      sr_no: '1',
+      amount: 5000,
+      monthly:150,
+      month:"1,800",
+      year:"6,800",
+    },
+    {
+      key: '2',
+      sr_no: '2',
+      amount: "10,000",
+      monthly:300,
+      month:"3,600",
+      year:"13,600",
+    },
+    {
+      key: '3',
+      sr_no: '3',
+      amount: "15,000",
+      monthly:450,
+      month:"5,400",
+      year:"20,400",
+    },
+    {
+      key: '4',
+      sr_no: '4',
+      amount: "20,000",
+      monthly:600,
+      month:"7,200",
+      year:"27,200",
+    },
+    {
+      key: '5',
+      sr_no: '5',
+      amount: "25,000",
+      monthly:750,
+      month:"9,000",
+      year:"34,000",
+    },
+    {
+      key: '6',
+      sr_no: '6',
+      amount: "30,000",
+      monthly:900,
+      month:"10,800",
+      year:"40,800",
+    },
+    {
+      key: '7',
+      sr_no: '7',
+      amount: "50,000",
+      monthly:"1500",
+      month:"18,000",
+      year:"68,000",
+    },
+    {
+      key: '8',
+      sr_no: '8',
+      amount: "1 LAKH",
+      monthly:3000,
+      month:"36,000",
+      year:"1,36,000",
+    },
+    {
+      key: '9',
+      sr_no: '9',
+      amount: "2 LAKH",
+      monthly:6000,
+      month:"72,000",
+      year:"2,72,000",
+    },
+    {
+      key: '10',
+      sr_no: '10',
+      amount: "3 LAKH",
+      monthly:9000,
+      month:"1,08,000",
+      year:"4,08,000",
+    }
+    
+  ];
+  
+  const columns = [
+    {
+      title: 'S.NO',
+      dataIndex: 'sr_no',
+      key: 'sr_no',
+    },
+    {
+      title: 'AMOUNT',
+      dataIndex: 'amount',
+      key: 'amount',
+    },
+    {
+      title: 'MONTHLY 3%',
+      dataIndex: 'monthly',
+      key: 'monthly',
+    },
+    {
+      title: '12 MONTHS',
+      dataIndex: 'month',
+      key: 'month',
+    },
+    {
+      title: '1 YEAR TOTAL RETURN',
+      dataIndex: 'year',
+      key: 'year',
+    },
+  ];
+  
+
+
   return (
-    <div className="h-[150vh] w-[100%] flex flex-col bg-[#434343]">
+    <div className="h-[100vh] w-[100%] flex flex-col bg-[#434343]">
       
       <motion.div
         initial={{ x: "-100%" }}
@@ -31,43 +147,16 @@ function App() {
         }}
       >
         <Navbar />
-        <div className="flex h-[93vh] pt-[40px] text-white px-5 ">
-          <p className="text-4xl">HELLO</p>
-          <img
-            src={homeAnimation}
-            className="relative  left-[40%] top-5 w-[635px] h-[420px] rounded-xl transform
-            transition duration-500 hover:scale-110 "
-          />
-        </div>
-        <div className="bg-white h-[100vh] flex  justify-between items-center px-5">
-          <HeroCard />
-          <HeroCard />
-          <HeroCard />  
+        
+        <div className=" h-[88vh] w-[100%] flex justify-center items-end   ">
 
-        </div>
-        <div className="h-[100vh] w-[100%] bg-purple-100 flex justify-around">
-          <div>
-            <img  className ="h-[600px] w-[400px]" src={iphone1} />
+          <div className="h-[350px] w-[850px]  rounded-t-3xl bg-black flex justify-center items-end">
+               <div className="w-[820px] h-[330px] bg-red-500 rounded-t-3xl flex flex-col items-center justify-center">
+               <img src={onlyLogo} className='w-[200px] h-[200px]' alt="" />
+               <h2 className="text-4xl text-white">Anil Sinh Parmar Consaltancy Service PVT LTD</h2>
+               </div>
           </div>
-          <div className=" h-[400px] w-[550px] mt-[200px] ml-[0px]">
-              <p className="text-4xl">
-              ontrary to popular belief, Lorem Ipsum is not simply random text.
-              It has roots in a piece of classical Latin literature from 45 BC,
-              making it over 2000 years old. Richard McClintock.
-              </p>
-          </div>
-        </div>
-        <div className="h-[100vh] w-[100%] bg-yellow-50 flex justify-around">
-        <div className=" h-[400px] w-[550px] mt-[200px] ml-[0px]">
-              <p className="text-4xl">
-              ontrary to popular belief, Lorem Ipsum is not simply random text.
-              It has roots in a piece of classical Latin literature from 45 BC,
-              making it over 2000 years old. Richard McClintock.
-              </p>
-          </div>
-          <div>
-            <img  className ="h-[600px] w-[400px]" src={iphone2} />
-          </div>
+
         </div>
       </motion.div>
     </div>
