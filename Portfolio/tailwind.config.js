@@ -5,8 +5,21 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-
+    extend: {
+        keyframes: {
+            wiggle: {
+                '0%, 100%': {
+                    transform: 'rotate(-20deg)'
+                },
+                '50%': {
+                    transform: 'rotate(20deg)'
+                },
+            }
+        },
+        animation: {
+            wiggle: 'wiggle 1s ease-in-out infinite',
+        }
+    },
+},
+    plugins: [],
+  }
